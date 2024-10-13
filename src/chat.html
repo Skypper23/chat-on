@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div>
+    <div class="container">
         <div class="text-box">
         </div>
-        <input type="text" id="input-msg" placeholder="Escreve a tua mensagem">
-        <input type="submit" value="Enviar" onclick="enviarmsg()">
+        <div>
+            <input type="text" id="input-msg" placeholder="Escreve a tua mensagem">
+            <input type="submit" value="Enviar" onclick="enviarmsg()" class="btn">
+        </div>
     </div>
 </body>
 <script src="/socket.io/socket.io.js"></script>

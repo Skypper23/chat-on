@@ -1,4 +1,4 @@
-const socket = io("http://localhost:3030");
+const socket = io("https://skypper23.github.io/chat-on/");
 
 const urlSearch = new URLSearchParams(window.location.search);
 const username = urlSearch.get("nome");
@@ -33,13 +33,13 @@ socket.on("mensagem", (dado)=>{
     const user = dado.username;
     const texto = dado.msg;
     const h3 = document.querySelector(".text-box");
-    h3.innerHTML += `<div>${user}: ${texto}</div>`;
+    h3.innerHTML += `<div"><h3><strong class="other_user">${user}</strong>: ${texto}</h3></div>`;
 })
 
 socket.on("user_on", (dado) =>{
     const name = dado.username;
     const h3 = document.querySelector(".text-box");
-    h3.innerHTML += `<div>${name}: Entrou no chat!</div>`;
+    h3.innerHTML += `<div><h4>${name}: Entrou no chat!</h4></div>`;
 })
 
 socket.on("old_msgs", (dados) => {
@@ -47,6 +47,6 @@ socket.on("old_msgs", (dados) => {
         const user_name = mensagem.username;  // Acessa o username da mensagem
         const msg = mensagem.msg;  // Acessa a mensagem
         const h3 = document.querySelector(".text-box");
-        h3.innerHTML += `<div>${user_name}: ${msg}</div>`;  // Adiciona cada mensagem à tela
+        h3.innerHTML += `<div><h5>${user_name}: ${msg}</h5></div>`;  // Adiciona cada mensagem à tela
     });
 });
