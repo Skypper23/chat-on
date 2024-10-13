@@ -39,7 +39,7 @@ io.on("connection", (socket) => {
     socket.on("disconnect", () => {
         const index = users.findIndex(user => user.id === socket.id); // Encontrar o índice do usuário pelo ID
         if (index !== -1) {
-            users.splice(index, 1); // Remover o usuário da array
+            users.splice(index, 1); // Remover o usuário da array.
         }
         console.log(users);
     })
