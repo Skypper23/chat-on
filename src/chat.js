@@ -1,4 +1,4 @@
-const socket = io("https://skypper23.github.io/chat-on/src/index.html");
+const socket = io("https://skypper23.github.io/chat-on/src/chat.html");
 
 const urlSearch = new URLSearchParams(window.location.search);
 const username = urlSearch.get("nome");
